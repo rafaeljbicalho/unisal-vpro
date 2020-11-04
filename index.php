@@ -1,7 +1,7 @@
 <?php
 define('DB_HOST'        , "localhost");
 define('DB_USER'        , "sa");
-define('DB_PASSWORD'    , "Hahafdpvsf0@");
+define('DB_PASSWORD'    , "senha");
 define('DB_NAME'        , "projeto");
 define('DB_DRIVER'      , "sqlsrv");
 
