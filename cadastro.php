@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 <?php
 
 include "dbconfig.php";
 
 ?>
 
+=======
+>>>>>>> 693e746d1bb72dcb1ff717e6ebf30f1fde0b0d57
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +38,7 @@ if (isset($_POST['enviarCadastro'])
                         && !empty($_POST['cidade'])
                           && !empty($_POST['estado'])
                             && !empty($_POST['pessoas'])) {
+<<<<<<< HEAD
   
   $nome           = trim($_POST['nome']);
   $email          = trim($_POST['email']);
@@ -65,6 +69,10 @@ if (isset($_POST['enviarCadastro'])
 
   $insertUser = $crud->cadastrarUsuario($nome,$email,$dataNascimento,$finalCPF,$finalCelular,$cep,$endereco,$numero,
     $bairro,$cidade,$estado,$qtdPessoas,$empregado,$sobre,$criadoEm);                             
+=======
+
+  echo "Lets insert";                             
+>>>>>>> 693e746d1bb72dcb1ff717e6ebf30f1fde0b0d57
 
 }
 
