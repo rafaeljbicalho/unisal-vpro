@@ -112,3 +112,15 @@ th {
     padding: 20px;
     border-radius: 20px;
 }
+
+.whatsapp {
+    border-radius: 17px;
+    font-size: 10px;
+    padding: 0.200rem;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #00e676;
+    border-color: #00e676;
+}

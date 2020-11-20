@@ -2,8 +2,8 @@
 
 $DB_host = "ip_address";
 $DB_user = "user";
-$DB_pass = "*********";
-$DB_name = "projeto";
+$DB_pass = "senha";
+$DB_name = "db";
 
 
 try
