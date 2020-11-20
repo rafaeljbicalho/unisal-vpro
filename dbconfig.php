@@ -1,8 +1,8 @@
 <?php
 
-$DB_host = "192.168.5.102";
-$DB_user = "sa";
-$DB_pass = "Hahafdpvsf0@";
+$DB_host = "ip_address";
+$DB_user = "user";
+$DB_pass = "*********";
 $DB_name = "projeto";
 
 
