@@ -201,7 +201,7 @@ if (isset($_POST['enviarCadastro'])
   </form>
 </div>
 
-<footer style="margin-top:12%;margin-top: 31%;background-color: white;padding: 14px;">
+<footer style="margin-top:12%;margin-top: 13%;background-color: white;padding: 14px;">
   <p class="author">© 2020 Author: Rafael Bicalho <a href="mailto:rafaeljbicalho@gmail.com">rafaeljbicalho@gmail.com</a></p>
 </footer>
 
