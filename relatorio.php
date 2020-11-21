@@ -1,11 +1,13 @@
 <?php
 
+// Always start this first
+session_start();
+
 include "dbconfig.php";
 
 // select usuários
 $usuariosArray = $crud->selectUsers(" SELECT * FROM Cadastro ORDER BY CriadoEm DESC");
 
-// var_dump($usuariosArray);
 
 // mask número celular
 function masc_tel($TEL) {
@@ -92,6 +94,8 @@ function formata_cpf_cnpj_cep($cpf_cnpj_cep){
 
 ?>
 
+<?php 
+if (isset($_SESSION['user']) && !empty($_SESSION['user'])) { ?>
 <!DOCTYPE html>
   <html>
 
@@ -170,3 +174,9 @@ function formata_cpf_cnpj_cep($cpf_cnpj_cep){
   
 </body>
 </html>
+
+<?php } else { ?>
+  <script>
+    alert("Você não possui permissão para acessar esta página");
+  </script>
+<?php } ?>

@@ -69,6 +69,14 @@ class crud
 		return $editRow;
 	}
 
+	public function verificaLogin($usuario, $password)
+	{
+		$stmt = $this->db->prepare(" SELECT * FROM Login WHERE UserName = '$usuario' AND Password = '$password' ");
+		$stmt->execute();
+		$loginArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $loginArray;
+	}
+
 }
     
 ?>

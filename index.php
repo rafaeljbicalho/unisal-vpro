@@ -1,24 +1,38 @@
 <?php
 
-include "class.crud.php";
+// Always start this first
+session_start();
+
+include "dbconfig.php";
+
+// check user login
+if (isset($_POST['fazerLogin']) && !empty($_POST['loginEmail']) && !empty($_POST['loginSenha'])) {
+
+  $usuario = trim($_POST['loginEmail']);
+  $senha   = trim($_POST['loginSenha']);
+
+  $isLoginValid = $crud->verificaLogin($usuario,$senha);
+
+  foreach ($isLoginValid as $user){
+
+    $usarioLogado = $user['UserName'];
+  }
+
+  if (isset($isLoginValid) && !empty($isLoginValid)) {
+
+    // Always start this first
+    $_SESSION['user'] = $usarioLogado;
+  }
+}
 
 ?>
 
 <!DOCTYPE html>
   <html>
-  <head>
-    <title>Unisal VPRO</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Rafael Bicalho">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"
-
-    <!-- Local CSS -->
-    <link rel="stylesheet" href="css/local.css"
-  </head>
+    <?php
+      include "head.php";
+    ?>
 
 <body style="background-color:#e3dfdb;">
 

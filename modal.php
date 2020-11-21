@@ -22,7 +22,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
-        <button type="submit" name="loginSubmit" class="btn btn-outline-primary">Login</button>
+        <button type="submit" name="fazerLogin" class="btn btn-outline-primary">Login</button>
       </div>
       </form>
     </div>
