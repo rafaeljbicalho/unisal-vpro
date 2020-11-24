@@ -1,10 +1,9 @@
 <?php
 
-$DB_host = "ip_address";
-$DB_user = "user";
-$DB_pass = "senha";
-$DB_name = "db";
-
+$DB_host = "**********";
+$DB_user = "**********";
+$DB_pass = "**********";
+$DB_name = "**********";
 
 try
 {

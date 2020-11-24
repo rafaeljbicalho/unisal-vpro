@@ -5,6 +5,8 @@ session_start();
 
 include "dbconfig.php";
 
+$isRelatorio = true;
+
 // select usuários
 $usuariosArray = $crud->selectUsers(" SELECT * FROM Cadastro ORDER BY CriadoEm DESC");
 
@@ -110,7 +112,7 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user'])) { ?>
     ?>
 
     <div class="relatorio">
-      <p><u>Relatório</u></p>
+      <p>Relatório</p>
     </div>
 
     <table class="table table-striped table-hover">
@@ -168,9 +170,23 @@ if (isset($_SESSION['user']) && !empty($_SESSION['user'])) { ?>
       </tbody>
     </table>
 
-<footer style="margin-top:12%;margin-top: 31%;background-color: white;padding: 14px;">
-  <p class="author">© 2020 Author: Rafael Bicalho <a href="mailto:rafaeljbicalho@gmail.com">rafaeljbicalho@gmail.com</a></p>
-</footer>
+    <footer style="margin-top:12%;margin-top: 17%;background-color: white;padding: 14px;">
+    <!-- <p>Telefone: (019)3333-3333</p>
+    <p class="author">© 2020 Author: Rafael Bicalho <a href="mailto:rafaeljbicalho@gmail.com">rafaeljbicalho@gmail.com</a></p> -->
+    <div class="row" style="width: 100%;">
+      <div class="col-sm author" style="margin-top: 1.5%;" id="contato">
+      Telefone: (019)98315-0499
+      </div>
+      <div class="col-sm author" style="margin-top: 1.5%;">
+      © 2020 Author: Rafael Bicalho <a href="mailto:rafaeljbicalho@gmail.com">rafaeljbicalho@gmail.com</a>
+      </div>
+      <div class="col-sm" author>
+        <a class="nav-link" target="_blank" href="https://facebook.com">
+        <img border="0" alt="W3Schools" src="img/facebook.png" style="width: 30px;height: 30px;">
+      </a>
+      </div>
+  </div>
+  </footer>
   
 </body>
 </html>

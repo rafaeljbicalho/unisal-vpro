@@ -3,7 +3,29 @@
 // Always start this first
 session_start();
 
+$isCadastro = true;
+
 include "dbconfig.php";
+
+// check user login
+if (isset($_POST['fazerLogin']) && !empty($_POST['loginEmail']) && !empty($_POST['loginSenha'])) {
+
+  $usuario = trim($_POST['loginEmail']);
+  $senha   = trim($_POST['loginSenha']);
+
+  $isLoginValid = $crud->verificaLogin($usuario,$senha);
+
+  foreach ($isLoginValid as $user){
+
+    $usarioLogado = $user['UserName'];
+  }
+
+  if (isset($isLoginValid) && !empty($isLoginValid)) {
+
+    // Always start this first
+    $_SESSION['user'] = $usarioLogado;
+  }
+}
 
 ?>
 
@@ -81,7 +103,7 @@ if (isset($_POST['enviarCadastro'])
   <?php } ?>
 
 <div class="cadastro">
-  <p><u>Entre em contato conosco</u></p>
+  <p>Entre em contato conosco</p>
 </div>
 
 <div class="container" style="background-color: white;border-radius: 15px;padding: 5em;margin-top: 4%;">
@@ -91,7 +113,7 @@ if (isset($_POST['enviarCadastro'])
     <!-- Nome -->
     <div class="form-group col-md-6">
       <label for="nome">Nome</label>
-      <input type="text" name="nome" class="form-control" id="nome" required value="<?= isset($_POST['nome']) ? $_POST['nome'] : '' ?>">
+      <input type="text" name="nome" placeholder="Insira seu nome"class="form-control" id="nome" required value="<?= isset($_POST['nome']) ? $_POST['nome'] : '' ?>">
     </div>
     <!-- Email -->
     <div class="form-group col-md-6">
@@ -195,9 +217,23 @@ if (isset($_POST['enviarCadastro'])
   </form>
 </div>
 
-<footer style="margin-top:12%;margin-top: 13%;background-color: white;padding: 14px;">
-  <p class="author">© 2020 Author: Rafael Bicalho <a href="mailto:rafaeljbicalho@gmail.com">rafaeljbicalho@gmail.com</a></p>
-</footer>
+<footer style="margin-top:12%;margin-top: 11%;background-color: white;padding: 14px;">
+    <!-- <p>Telefone: (019)3333-3333</p>
+    <p class="author">© 2020 Author: Rafael Bicalho <a href="mailto:rafaeljbicalho@gmail.com">rafaeljbicalho@gmail.com</a></p> -->
+    <div class="row" style="width: 100%;">
+      <div class="col-sm author" style="margin-top: 1.5%;" id="contato">
+      Telefone: (019)98315-0499
+      </div>
+      <div class="col-sm author" style="margin-top: 1.5%;">
+      © 2020 Author: Rafael Bicalho <a href="mailto:rafaeljbicalho@gmail.com">rafaeljbicalho@gmail.com</a>
+      </div>
+      <div class="col-sm" author>
+        <a class="nav-link" target="_blank" href="https://facebook.com">
+        <img border="0" alt="W3Schools" src="img/facebook.png" style="width: 30px;height: 30px;">
+      </a>
+      </div>
+  </div>
+  </footer>
 
 <!-- JS para buscar CEP -->
 <script>
@@ -269,7 +305,18 @@ if (isset($_POST['enviarCadastro'])
 
     </script>
 
-
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("nav-item");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
 
   <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

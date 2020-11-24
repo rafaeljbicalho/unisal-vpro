@@ -2,11 +2,11 @@
     border: solid 1px transparent;
     background-color: white;
     margin-top: 5%;
-    margin-left: 28%;
-    width: 45%;
+    margin-left: 0%;
+    width: 100%;
     padding: 120px;
     text-align: justify;
-    font-size: 1em !important;
+    font-size: 19px !important;
     letter-spacing: .05em;
     line-height: 1.368em;
 }
@@ -15,8 +15,8 @@
     border: solid 1px transparent;
     background-color: white;
     margin-top: 5%;
-    margin-left: 28%;
-    width: 45%;
+    margin-left: 0%;
+    width: 100%;
     padding: 120px;
     text-align: justify;
     font-size: 19px;
@@ -42,7 +42,6 @@
 }
 
 .author {
-    margin-left: 39%;
     letter-spacing: .05em;
     font-size: 11px;
 }
@@ -59,7 +58,7 @@
 }
 
 .cadastro {
-    margin-left: 33%;
+    margin-left: 27%;
     padding-top: 70px;
     font-size: 43px;
     font-weight: 700;
@@ -124,3 +123,17 @@ th {
     background-color: #00e676;
     border-color: #00e676;
 }
+
+.col-sm {
+    text-align: center !important;
+}
+
+.navbar-nav > .active > a {
+    color: aqua;
+    background-color: #8edc8b;    
+    border-radius: 45px;
+  }
+  .nav-item > a:hover {
+    color: aqua;
+  }
+  
